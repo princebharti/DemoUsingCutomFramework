@@ -7,12 +7,20 @@
 //
 
 import UIKit
+import MyFramework
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        let myView = SwitchView(frame: self.view.frame, backgroundColor: .brown)
+        view.addSubview(myView)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            UIView.animate(withDuration: 3) {
+                myView.backgroundColor = .blue
+            }
+        }
+
     }
 
 
